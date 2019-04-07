@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario</title>
+</head>
+<body>
+
+<form id="registro" autocomplete="off">
+
+<label >Código</label>
+<input type="text" name="codigo" required>
+	
+<br>
+
+<label >Nombres</label>
+<input type="text" name="nombres" required>
+
+<br>
+
+<button>Enviar</button>
+
+</form>
+
+<div id="mensaje" ></div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+$(document).on('submit','#registro',function(e){
+
+parametros = $(this).serialize();
+
+//ajax
+$.ajax({
+
+url:'source.php',
+type:'POST',
+data:parametros,
+beforeSend:function(){
+
+$('#mensaje').html('Cargando...');
+
+},
+success:function(data){
+
+$('#mensaje').html(data);
+
+
+}
+
+
+
+});
+
+
+
+e.preventDefault();
+});
+</script>
+
+</body>
+</html>

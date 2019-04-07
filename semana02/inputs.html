@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Inputs</title>
+</head>
+<body>
+
+<form id="registro" autocomplete="off">
+
+<label>Nombres</label>
+<input type="text" name="nombres" 
+maxlength="5" required placeholder="Ingrese sus Nombres">
+
+<br>
+
+<label>Edad</label>
+<input type="number" name="edad" min="18" max="60" required>
+
+<br>
+
+<label>Talla</label>
+<input type="number" name="talla" required 
+ step="any" >
+
+ <br>
+
+ <label>Fecha</label>
+ <input type="date" name="fecha" value="2019-04-01" 
+ min="2019-01-01" max="2019-04-30" >
+
+<br>
+
+<!-- 14:00 -->
+<label>Hora</label>
+<input type="time" name="hora" value="10:00" required>
+
+<hr>
+<label>Turno</label>
+<input type="radio" name="turno" value="M" required>Mañana
+<input type="radio" name="turno" value="T" required>Tarde
+<input type="radio" name="turno" value="N" required>Noche
+<br>
+<label>Días</label>
+<input type="checkbox" name="dias[]" value="Lunes">Lunes
+<input type="checkbox" name="dias[]" value="Martes">Martes
+<input type="checkbox" name="dias[]" value="Miercoles">Miercoles
+
+<hr>
+<label>Distrito</label>
+<select name="distrito" required>
+<option value="">Seleccionar</option>
+<option value="1">SJL</option>
+<option value="2" >Ate</option>
+<option value="3" selected>Comas</option>
+
+</select>
+
+<br>
+<label>Comentario</label>
+<textarea name="comentario" cols="30" rows="5" required placeholder="Ingrese un comentario"></textarea >
+
+<br>
+
+<label>Archivo</label>
+<input type="file" name="archivo">
+
+
+<br>
+<button>Enviar</button>
+</form>
+
+
+	
+</body>
+</html>

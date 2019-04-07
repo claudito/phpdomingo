@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Enlaces</title>
+</head>
+<body>
+
+<a href="http://google.com">Ir a Google</a>
+
+<br>
+
+<a href="http://google.com" target="blank" >Ir a Google en otra pestaña</a>
+
+<hr>
+
+<a class="datos"  data-nombres="Luis" data-apellidos="Claudio"  >Mis Datos</a>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+	
+$(document).on('click','.datos',function (){
+
+nombres   = $(this).data('nombres');
+
+apellidos = $(this).data('apellidos');
+
+
+alert(nombres+' '+apellidos);
+
+});
+
+</script>
+</body>
+</html>
