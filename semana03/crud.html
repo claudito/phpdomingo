@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Sweet Alert -->
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.8.5/dist/sweetalert2.all.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8.8.5/dist/sweetalert2.min.css">
+
+
+    <title>Ejemplo 02</title>
+  </head>
+  <body>
+
+  <div class="container-fluid">
+    
+  <div class="row">
+    
+  <div class="col-md-12">
+
+  <button class="btn btn-primary btn-sm btn-agregar" ><i class="fa fa-plus"></i> Agregar</button>
+    
+  <hr>
+
+  <div class="table-responsive">
+
+  <table class="table table-striped  table-bordered table-hover table-sm">
+    
+  <thead class="thead-light">
+  <tr>
+  <th>Código</th>
+  <th>Nombres</th>
+  <th>Apellidos</th>
+  <th>Dni</th>
+  <th>Fecha</th>
+  <th>Acciones</th>
+  </tr>
+
+  </thead>
+
+
+   <tbody>
+
+    <tr >
+    <td>1</td>
+    <td>Juan</td>
+    <td >Perez</td>
+    <td>12345678</td>
+    <td>15/07/1990</td>
+    <td>
+    
+    <button class="btn btn-primary btn-sm btn-edit"
+    
+    data-nombres   ="Juan"
+    data-apellidos ="Perez"
+    data-dni       ="12345678"
+    data-fecha     ="1990-07-15"
+
+
+
+    ><i class="fa fa-pencil-square-o"></i></button>
+    <button class="btn btn-danger btn-sm btn-delete"><i class="fa fa-trash-o"></i></button>
+   
+
+    </td>
+   </tr>
+
+   <tr >
+    <td>2</td>
+    <td>Maria</td>
+    <td>Torres</td>
+    <td>44445555</td>
+    <td>15/07/1990</td>
+    <td>
+       
+    <button class="btn btn-primary btn-sm btn-edit"
+    
+    data-nombres   ="Maria"
+    data-apellidos ="Torres"
+    data-dni       ="44445555"
+    data-fecha     ="1990-07-15"
+
+
+
+    ><i class="fa fa-pencil-square-o"></i></button>
+
+    <button class="btn btn-danger btn-sm btn-delete"><i class="fa fa-trash-o"></i></button>
+
+    </td>
+   </tr>
+
+    <tr >
+    <td>3</td>
+    <td>Luis</td>
+    <td>Paz</td>
+    <td>88990066</td>
+    <td>15/07/1990</td>
+    <td>
+       
+     <button class="btn btn-primary btn-sm btn-edit"
+    
+    data-nombres   ="Luis"
+    data-apellidos ="Paz"
+    data-dni       ="88990066"
+    data-fecha     ="1990-07-15"
+
+
+
+    ><i class="fa fa-pencil-square-o"></i></button>
+    <button class="btn btn-danger btn-sm btn-delete"><i class="fa fa-trash-o"></i></button>
+
+
+    </td>
+   </tr>
+     
+     
+
+   </tbody>
+
+
+  </table>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+
+  </div>
+
+  
+   <!-- Modal Registro (Agregar / Actualizar) -->
+   
+   <form id="registro">
+       
+  <div class="modal fade" id="modal-registro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+      <div class="form-group">
+      <label>Nombres</label>
+      <input type="text" name="nombres" class="nombres form-control">
+      </div>
+
+      <div class="form-group">
+      <label>Apellidos</label>
+      <input type="text" name="apellidos" class="apellidos form-control">
+      </div>
+
+      <div class="form-group">
+      <label>Dni</label>
+      <input type="text" name="dni" class="dni form-control">
+      </div>
+
+      <div class="form-group">
+      <label>Fecha</label>
+      <input type="date" name="fecha" class="fecha form-control">
+      </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary btn-submit">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+   </form>
+   
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script>
+  
+//Cargar Modal Agregar
+$(document).on('click','.btn-agregar',function(){
+
+$('#registro')[0].reset();
+
+$('.btn-submit').html('Agregar');
+$('.modal-title').html('Agregar');
+$('#modal-registro').modal('show');
+
+});
+
+
+//Cargar Modal Actualizar
+$(document).on('click','.btn-edit',function(){
+
+$('#registro')[0].reset();
+
+nombres   = $(this).data('nombres');
+apellidos = $(this).data('apellidos');
+dni       = $(this).data('dni');
+fecha     = $(this).data('fecha');
+
+$('.nombres').val(nombres);
+$('.apellidos').val(apellidos);
+$('.dni').val(dni);
+$('.fecha').val(fecha);
+ 
+$('.btn-submit').html('Actualizar');
+$('.modal-title').html('Actualizar');
+$('#modal-registro').modal('show');
+
+});
+
+
+//Eliminar Registro
+$(document).on('click','.btn-delete',function(){
+
+
+Swal.fire({
+  title: '¿Estas Seguro?',
+  text: "El registro seleccionado se eliminará permanentemente",
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, estoy Seguro',
+  cancelButtonText: 'Cancelar'
+}).then((result) => {
+  if (result.value) {
+    Swal.fire(
+      'Borrado Exitoso',
+      'Registro Eliminado',
+      'success'
+    )
+  }
+});
+
+
+
+
+
+});
+
+
+
+</script>
+
+
+  </body>
+</html>
