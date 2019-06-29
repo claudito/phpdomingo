@@ -37,7 +37,7 @@ switch ($opcion) {
      dni,
      usuario,
      password,
-     dateCreate
+    DATE_FORMAT(dateCreate,'%d/%m/%Y %H:%i:%s') dateCreate
 
      FROM usuario";
      
@@ -53,7 +53,18 @@ switch ($opcion) {
      //var_dump($result);
 
      //JSON
-     echo json_encode($result);
+    // echo json_encode($result);
+
+     $json = [ 
+
+       "sEcho"=>1,
+       "iTotalRecords"=>count($result),
+       "iTotalDisplayRecords"=>count($result),
+       "aaData"=>$result
+     ];
+
+     echo json_encode($json);
+
 
 
 	} catch (Exception $e) {
@@ -66,7 +77,7 @@ switch ($opcion) {
 
 	case 2:
 
-	$id = 2;
+	$id = $_REQUEST['id'];
     
     try {
 
@@ -102,11 +113,11 @@ switch ($opcion) {
 
 	case 3:
 
-    $nombres   = "MARIELA";
-    $apellidos = "JUAREZ";
-    $dni       = "44557799";
-    $usuario   = "mariela.juarez";
-    $password  = md5("mariela");
+    $nombres   = $_REQUEST['nombres'];
+    $apellidos = $_REQUEST['apellidos'];
+    $dni       = $_REQUEST['dni'];
+    $usuario   = $_REQUEST['usuario'];
+    $password  = md5($dni);
 
 	
 	try {
@@ -165,12 +176,12 @@ switch ($opcion) {
 
 	case 4:
   
-    $nombres     = "MATEO";
-    $apellidos   = "ROJA";
-    $dni         = "77889900";
-    $usuario     = "mateo.rojas";
-    $password    =  md5("mateo");
-    $id          =  5;
+    $nombres   = $_REQUEST['nombres'];
+    $apellidos = $_REQUEST['apellidos'];
+    $dni       = $_REQUEST['dni'];
+    $usuario   = $_REQUEST['usuario'];
+   // $password    =  md5("mateo");
+    $id        = $_REQUEST['id'];
 
     
     try {
@@ -180,8 +191,7 @@ switch ($opcion) {
     nombres   =:nombres,
     apellidos =:apellidos,
     dni       =:dni,
-    usuario   =:usuario,
-    password  =:password
+    usuario   =:usuario
     
     WHERE id=:id";
     
@@ -191,7 +201,6 @@ switch ($opcion) {
     $statement->bindParam(':apellidos',$apellidos);
     $statement->bindParam(':dni',$dni);
     $statement->bindParam(':usuario',$usuario);
-    $statement->bindParam(':password',$password);
     $statement->bindParam(':id',$id);
 
     $statement->execute();
@@ -202,7 +211,7 @@ switch ($opcion) {
 
     "title" => "Buen Trabajo",
     "text"  => "Registro Actualizado",
-    "type"  => "succcess"
+    "type"  => "success"
 
     )
 
@@ -230,7 +239,7 @@ switch ($opcion) {
 
     case 5:
 
-     $id = 3;
+     $id = $_REQUEST['id'];
    
      try {
 
