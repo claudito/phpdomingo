@@ -48,8 +48,23 @@
 <!-- Contenido -->
 <div class="row">
 <div class="col-md-12">
-	
 
+<nav>
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="#" >Inicio</a>
+</li>
+<li class="breadcrumb-item breadcrumb-item-menu">
+Home
+</li>
+<li class="breadcrumb-item active breadcrumb-item-submenu" >
+...
+</li>
+</ol>
+</nav>
+
+	
+<div id="contenido"></div>
 
 </div>
 </div>
@@ -59,6 +74,8 @@
 </div>
 
 <script>
+
+//Cargar Nav
 $(document).ready(function (){
 
 $.get('templates/nav.php',{},function(nav){
@@ -69,6 +86,78 @@ $('#nav').html(nav);
 
 });
 
+//Cargar Página
+$(document).on('click','.dropdown-pagina',function(){
+
+ menu    = $(this).data('menu');
+ submenu = $(this).data('submenu');
+ pagina  = $(this).data('pagina');
+
+ $.ajax({
+ 
+  url:"pages/"+pagina+".php",
+  type:"GET",
+  data:{},
+  beforeSend:function(){
+
+	swal({
+
+	title:"Cargando...",
+	text:"No Cierre la ventana",
+	imageUrl:"img/loader2.gif",
+	showConfirmButton:false
+
+	});
+
+
+  },
+  success:function(data){
+
+  $('#contenido').html(data);
+
+  $('.breadcrumb-item-menu').html(menu);
+  $('.breadcrumb-item-submenu').html(submenu);
+
+  swal({
+  
+  title:"Buen Trabajo",
+  text :"Página Cargada",
+  type:"success",
+  timer:2000,
+  showConfirmButton:false
+
+  });
+
+
+
+  },
+  error:function(xhr,status,error)
+  {
+
+   swal({
+  
+  title:error,
+  text :"...",
+  type:"warning",
+  timer:2000,
+  showConfirmButton:false
+
+  }); 
+  
+  $('.breadcrumb-item-menu').html(menu);
+  $('.breadcrumb-item-submenu').html(submenu);
+  $('#contenido').html('<h1>Página No encontrada :(</h1>');
+
+  }
+
+
+
+
+ });
+
+
+
+});
 
 
 </script>

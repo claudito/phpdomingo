@@ -56,7 +56,7 @@ Inicio de Sesión
 	
 <div class="form-group">
 <label >Usuario</label>
-<input type="text" name="user" class="form-control" required>
+<input type="text" name="user" class="form-control" required autofocus>
 </div>
 
 <div class="form-group">
